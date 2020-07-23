@@ -6,7 +6,6 @@ public class InsertionSort {
             int currentElement = list[i];
             int k;
             for(k = i - 1; k >=0 && list[k] > currentElement; k--){
-                System.out.println("Swap " + list[k+1] + " with " + list[k]);
                 list[k+1] = list[k];
             }
             list[k+1] = currentElement;
