@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class InsertionSort {
-    public static void insertionSortByStep(int[] list)  {
+    private static int[] insertionSortByStep(int[] list)  {
         for (int i = 1; i < list.length; i++){
             int currentElement = list[i];
             int k;
@@ -9,13 +9,17 @@ public class InsertionSort {
                 list[k+1] = list[k];
             }
             list[k+1] = currentElement;
-
-            System.out.print("List after the " + i + " sort: ");
-            for (int j = 0; j < list.length; j++) {
-                System.out.print(list[j] + "\t");
-            }
-            System.out.println();
+            printAfterSort(list, i);
         }
+        return list;
+    }
+
+    private static void printAfterSort(int[] list, int i) {
+        System.out.print("List after the " + i + " sort: ");
+        for (int j = 0; j < list.length; j++) {
+            System.out.print(list[j] + "\t");
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
