@@ -1,6 +1,12 @@
 import java.util.Scanner;
 
 public class InsertionSort {
+
+    public static void main(String[] args) {
+        int[] list = inputList();
+        insertionSortByStep(list);
+    }
+
     private static int[] insertionSortByStep(int[] list)  {
         for (int i = 1; i < list.length; i++){
             int currentElement = list[i];
@@ -22,7 +28,7 @@ public class InsertionSort {
         System.out.println();
     }
 
-    public static void main(String[] args) {
+    private static int[] inputList() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter list size:");
         int size = scanner.nextInt();
@@ -36,7 +42,6 @@ public class InsertionSort {
             System.out.print(list[i] + "\t");
         }
         System.out.println("\nBegin sort processing...");
-        insertionSortByStep(list);
-
+        return list;
     }
 }
